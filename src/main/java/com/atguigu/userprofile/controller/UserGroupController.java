@@ -50,6 +50,34 @@ public class UserGroupController {
     }
 
 
+    //创建分群
+    @PostMapping("/user-group")
+    public String genUserGroup(@RequestBody UserGroup userGroup){
+        userGroupService.genUserGroup(userGroup);
+        return "success";
+    }
+
+
+    //预估分群人数
+    @PostMapping("/user-group-evaluate")
+    public Long evaluateUserGroup(@RequestBody UserGroup userGroup){
+         Long userCount =userGroupService.evaluateUserGroup( userGroup);
+         return  userCount;
+
+    }
+
+    //分群的更新操作
+    @PostMapping("/user-group-refresh/{id}")
+    public String refreshUserGroup(@PathVariable("id") String userGroupId,@RequestParam("busiDate")String busiDate){
+        userGroupService.refreshUserGroup(userGroupId,busiDate);
+
+        return "success";
+    }
+
+
+
+
+
 
 }
 

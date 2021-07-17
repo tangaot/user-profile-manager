@@ -31,7 +31,7 @@ public class UserGroup implements Serializable {
 
     private String conditionJsonStr;
 
-    @TableField(exist = false)   //声明 数据表中实际不存在该字段
+    @TableField(exist = false)   //声明 数据表中实际不存在该字段 //为了在程序中方便接收 与计算 时用
     private List<TagCondition> tagConditions;
 
     private String conditionComment;
@@ -48,7 +48,7 @@ public class UserGroup implements Serializable {
 
     private Date createTime;
     @TableField(exist = false)
-    private String busiDate;
+    private String busiDate;    //为了方便教学 在页面中可以随意填写业务日期，实际生产应该去当前时间的前一日
 
     public String conditionJsonToComment(){
         StringBuilder comment=new StringBuilder();

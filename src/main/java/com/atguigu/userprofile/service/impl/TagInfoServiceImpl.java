@@ -49,7 +49,7 @@ public class TagInfoServiceImpl extends ServiceImpl<TagInfoMapper, TagInfo> impl
        }
 
        public Map<String,TagInfo> getTagInfoMapWithCode(){
-           List<TagInfo> tagInfoList =  list();
+           List<TagInfo> tagInfoList =  super.list();
            Map<String,TagInfo> tagInfoMap=new HashMap<>();
            for (TagInfo tagInfo : tagInfoList) {
                tagInfoMap.put(tagInfo.getTagCode(),tagInfo);
